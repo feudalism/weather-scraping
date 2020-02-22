@@ -8,3 +8,5 @@ from source import html_parser
 from source import DwdData
 
 from misc import ensure_correct_directory
+
+from gui import WidgetGallery

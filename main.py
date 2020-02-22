@@ -1,5 +1,6 @@
 ﻿from source import DwdData
 from misc import ensure_correct_directory
+from gui import WidgetGallery
 
 ensure_correct_directory(__file__)	
 
@@ -12,4 +13,6 @@ data = DwdData(region="Stuttgart",
 	weather=WEATHER,
 	warning=WARNING)
 data.generate_soups()
-data.parse()
+
+weather_data, warning_text = data.parse(do_print=True)
+WidgetGallery(data.region, weather_data, warning_text, data=data)

@@ -7,11 +7,11 @@ def parse(soup):
 	warning_date = get_date(info)
 	warning_text = get_text(info)
 	warning_extra = get_extra(info)
-
-	print(warning_title)
-	print(warning_date)
-	print(warning_text)
-	print(warning_extra)
+	
+	return "\n".join([warning_title,
+			warning_date,
+			warning_text,
+			warning_extra])
 		
 def check(soup):		
 	no_headline = soup.find("div", class_="noWarningHeadline")		
